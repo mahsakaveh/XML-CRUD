@@ -1,0 +1,31 @@
+﻿@Model IEnumerable
+<MvcXML.Models.employeeModels>
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <div>
+        @* <fieldset>
+            <h4> @Html.ActionLink("AddNewProject" , "AdminProject") </h4>
+        </fieldset> *@
+
+        <fieldset>
+            <table>
+                <tr><th>EmployeeName</th></tr>
+                <th>EmployeeEmail</th>
+                <th>EmployeePhone</th>
+
+                @{
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.EmployeeName</td>
+                            <td>@item.Email</td>
+                            <td>@item.Phone</td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        </fieldset>
+    </div>
